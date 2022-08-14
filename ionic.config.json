@@ -1,0 +1,7 @@
+{
+  "name": "mukto",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
