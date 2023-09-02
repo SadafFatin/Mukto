@@ -1,0 +1,351 @@
+{
+  
+    "distinct_years": [
+      2022,
+      2023
+    ],
+    "sam_values": {
+      "2022": {
+        "values": [
+          {
+            "month": "Jan",
+            "year": 2022,
+            "total_child_admitted": "949",
+            "total_child_screened": "345563"
+          },
+          {
+            "month": "Feb",
+            "year": 2022,
+            "total_child_admitted": "956",
+            "total_child_screened": "310723"
+          },
+          {
+            "month": "Mar",
+            "year": 2022,
+            "total_child_admitted": "1085",
+            "total_child_screened": "358143"
+          },
+          {
+            "month": "Apr",
+            "year": 2022,
+            "total_child_admitted": "948",
+            "total_child_screened": "327057"
+          },
+          {
+            "month": "May",
+            "year": 2022,
+            "total_child_admitted": "803",
+            "total_child_screened": "310820"
+          },
+          {
+            "month": "Jun",
+            "year": 2022,
+            "total_child_admitted": "849",
+            "total_child_screened": "356686"
+          },
+          {
+            "month": "Jul",
+            "year": 2022,
+            "total_child_admitted": "805",
+            "total_child_screened": "345770"
+          },
+          {
+            "month": "Aug",
+            "year": 2022,
+            "total_child_admitted": "1176",
+            "total_child_screened": "358219"
+          },
+          {
+            "month": "Sep",
+            "year": 2022,
+            "total_child_admitted": "1039",
+            "total_child_screened": "364142"
+          },
+          {
+            "month": "Oct",
+            "year": 2022,
+            "total_child_admitted": "1150",
+            "total_child_screened": "363227"
+          },
+          {
+            "month": "Nov",
+            "year": 2022,
+            "total_child_admitted": "1178",
+            "total_child_screened": "438269"
+          }
+        ]
+      },
+      "2023": {
+        "values": [
+          {
+            "month": "Jan",
+            "year": 2023,
+            "total_child_admitted": "1949",
+            "total_child_screened": "34563"
+          },
+          {
+            "month": "Feb",
+            "year": 2023,
+            "total_child_admitted": "2956",
+            "total_child_screened": "410723"
+          },
+          {
+            "month": "Mar",
+            "year": 2023,
+            "total_child_admitted": "185",
+            "total_child_screened": "558143"
+          },
+          {
+            "month": "Apr",
+            "year": 2023,
+            "total_child_admitted": "48",
+            "total_child_screened": "127057"
+          },
+          {
+            "month": "May",
+            "year": 2023,
+            "total_child_admitted": "1803",
+            "total_child_screened": "710820"
+          },
+          {
+            "month": "Jun",
+            "year": 2023,
+            "total_child_admitted": "2849",
+            "total_child_screened": "356686"
+          },
+          {
+            "month": "Jul",
+            "year": 2023,
+            "total_child_admitted": "105",
+            "total_child_screened": "34577"
+          },
+          {
+            "month": "Aug",
+            "year": 2023,
+            "total_child_admitted": "176",
+            "total_child_screened": "35219"
+          },
+          {
+            "month": "Sep",
+            "year": 2023,
+            "total_child_admitted": "10392",
+            "total_child_screened": "3364142"
+          },
+          {
+            "month": "Oct",
+            "year": 2023,
+            "total_child_admitted": "21520",
+            "total_child_screened": "36322"
+          },
+          {
+            "month": "Nov",
+            "year": 2023,
+            "total_child_admitted": "1478",
+            "total_child_screened": "4382"
+          },
+          {
+            "month": "Dec",
+            "year": 2023,
+            "total_child_admitted": "1478",
+            "total_child_screened": "53820"
+          }
+        ]
+      }
+    },
+    "sam_cum_admitted": [
+      {
+        "2022": 949,
+        "month": "Jan"
+      },
+      {
+        "2022": 1905,
+        "month": "Feb"
+      },
+      {
+        "2022": 2990,
+        "month": "Mar"
+      },
+      {
+        "2022": 3938,
+        "month": "Apr"
+      },
+      {
+        "2022": 4741,
+        "month": "May"
+      },
+      {
+        "2022": 5590,
+        "month": "Jun"
+      },
+      {
+        "2022": 6395,
+        "month": "Jul"
+      },
+      {
+        "2022": 7571,
+        "month": "Aug"
+      },
+      {
+        "2022": 8610,
+        "month": "Sep"
+      },
+      {
+        "2022": 9760,
+        "month": "Oct"
+      },
+      {
+        "2022": 10938,
+        "month": "Nov"
+      },
+      {
+        "2022": null,
+        "month": "Dec"
+      },
+       {
+        "2023": 3949,
+        "month": "Jan"
+      },
+      {
+        "2023": 905,
+        "month": "Feb"
+      },
+      {
+        "2023": 299,
+        "month": "Mar"
+      },
+      {
+        "2023": 6938,
+        "month": "Apr"
+      },
+      {
+        "2023": 741,
+        "month": "May"
+      },
+      {
+        "2023": 30000,
+        "month": "Jun"
+      },
+      {
+        "2023": 695,
+        "month": "Jul"
+      },
+      {
+        "2023": 771,
+        "month": "Aug"
+      },
+      {
+        "2023": 12610,
+        "month": "Sep"
+      },
+      {
+        "2023": 976,
+        "month": "Oct"
+      },
+      {
+        "2023": 1038,
+        "month": "Nov"
+      },
+      {
+        "2023": null,
+        "month": "Dec"
+      }
+    ],
+    "sam_cum_screened": [
+      {
+        "2022": 345563,
+        "month": "Jan"
+      },
+      {
+        "2022": 656286,
+        "month": "Feb"
+      },
+      {
+        "2022": 1014429,
+        "month": "Mar"
+      },
+      {
+        "2022": 1341486,
+        "month": "Apr"
+      },
+      {
+        "2022": 1652306,
+        "month": "May"
+      },
+      {
+        "2022": 2008992,
+        "month": "Jun"
+      },
+      {
+        "2022": 2354762,
+        "month": "Jul"
+      },
+      {
+        "2022": 2712981,
+        "month": "Aug"
+      },
+      {
+        "2022": 3077123,
+        "month": "Sep"
+      },
+      {
+        "2022": 3440350,
+        "month": "Oct"
+      },
+      {
+        "2022": 3878619,
+        "month": "Nov"
+      },
+      {
+        "2022": null,
+        "month": "Dec"
+      },
+      {
+        "2023": 3949,
+        "month": "Jan"
+      },
+      {
+        "2023": 905,
+        "month": "Feb"
+      },
+      {
+        "2023": 299,
+        "month": "Mar"
+      },
+      {
+        "2023": 6938,
+        "month": "Apr"
+      },
+      {
+        "2023": 741,
+        "month": "May"
+      },
+      {
+        "2023": 30000,
+        "month": "Jun"
+      },
+      {
+        "2023": 695,
+        "month": "Jul"
+      },
+      {
+        "2023": 771,
+        "month": "Aug"
+      },
+      {
+        "2023": 12610,
+        "month": "Sep"
+      },
+      {
+        "2023": 976,
+        "month": "Oct"
+      },
+      {
+        "2023": 1038,
+        "month": "Nov"
+      },
+      {
+        "2023": null,
+        "month": "Dec"
+      }
+    ]
+}

@@ -1,0 +1,62 @@
+
+p:nth-of-type(n):before {
+  content: attr(data-sectionvalue);
+  font-family: 'Rubik';
+}
+
+$categories: (
+ionic: var(--ion-color-primary),
+very_poor: var(--ion-color-danger-tint),
+moderate_poor: var(--ion-color-warning),
+poor: var(--ion-color-danger-tint),
+avg: var(--ion-color-warning-tint),
+good: var(--ion-color-success-tint),
+over_estimate: var(--ion-color-tertiary-tint),
+);
+
+@each $track,
+$value in map-remove($categories) {
+  p:nth-child(n+2):nth-child(-n+6)[track='#{$track}'] {
+    //background-color: $value;
+    border-left: 2px solid $value;
+    padding-left: 10px;
+    color: $value;
+  }
+
+  p:nth-child(n+8):nth-child(-n+12) {
+    color: #4c5b43;
+  }
+
+  p:nth-child(n+13) {
+    color: #546473;
+  }
+
+  p:nth-child(n+14)[track='#{$track}'] {
+    border-left: 2px solid $value;
+    padding-left: 10px;
+    color: $value;
+  }
+  span[track='#{$track}']  {
+    background-color: $value;
+    color: $value;
+    //--background: rgb(214, 6, 6);
+  }
+}
+
+p:nth-child(7) {
+
+  border-left: 2px solid var(--rank);
+  padding-left: 10px;
+  color: var(--rank);
+}
+
+
+li span {
+  float: left;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 5px;
+  margin-left: 0;
+  border: 1px solid #999;
+
+  }

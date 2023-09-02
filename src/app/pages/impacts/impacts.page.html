@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-button>
+        <ion-icon src="../../assets/icon/logo.svg" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Impacts
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ng-container *ngIf="currentImpact; else elseTemplate">
+    <ion-toolbar>
+      <ion-segment value="0" color="success" (ionChange)="onSegmentChanged($event)" mode="ios">
+        <ion-segment-button *ngFor="let impact of impacts;let i= index" [value]="i">
+          <ion-label>{{impact.goalProgress.title}}</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+
+    <ion-grid>
+      <ion-row>
+        <!--Progress-->
+        <ion-col sizeLg="3" sizeMd="4" size="12">
+          <app-goal-progress [goalProgress]="currentImpact.goalProgress"></app-goal-progress>
+        </ion-col>
+        <!--Graph-->
+        <ion-col sizeLg="9" sizeMd="8" size="12">
+          <ion-card mode="ios">
+            <ion-card-header>
+              <ion-card-title color="danger">{{currentImpact.prevalenceGraph.title}}</ion-card-title>
+              <ion-card-subtitle color="medium">{{currentImpact.prevalenceGraph.period}}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <div #prevalenceGraphCanvas class="ion-padding-top" id="prevalenceGraphCanvas">
+              </div>
+
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ng-container>
+  <ng-template #elseTemplate>
+    <app-skeleton></app-skeleton>
+  </ng-template>
+
+
+
+</ion-content>

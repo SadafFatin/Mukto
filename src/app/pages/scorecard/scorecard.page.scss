@@ -1,0 +1,130 @@
+
+ion-datetime-button{
+  margin-inline-start: 4px !important;
+  margin-inline-end: 4px !important;
+}
+p:nth-of-type(n):before {
+  content: attr(data-sectionvalue);
+}
+
+ion-segment-button{
+  font-size: .75em !important;
+  ion-icon{
+    font-size: .5em !important;
+  }
+}
+
+$categories: (
+ionic: var(--ion-color-primary),
+very_poor: var(--ion-color-danger-tint),
+moderate_poor: var(--ion-color-warning),
+poor: var(--ion-color-danger-tint),
+avg: var(--ion-color-warning-shade),
+good: var(--ion-color-success),
+over_estimate: var(--ion-color-tertiary-tint),
+);
+
+
+@each $track,
+$value in map-remove($categories) {
+  p:nth-child(n+2):nth-child(-n+6)[track='#{$track}'] {
+    //background-color: $value;
+    border-left: 2px solid $value;
+    padding-left: 10px;
+    color: $value;
+  }
+
+  p:nth-child(n+8):nth-child(-n+12) {
+    color: #4c5b43;
+  }
+
+  p:nth-child(n+13) {
+    color: #546473;
+  }
+
+  p:nth-child(n+14)[track='#{$track}'] {
+    border-left: 2px solid $value;
+    padding-left: 10px;
+    color: $value;
+  }
+  span[track='#{$track}']  {
+    background-color: $value;
+    color: $value;
+    --background: $value;
+  }
+  ion-badge[track='#{$track}']  {
+    background-color: $value;
+  }
+
+  ion-chip[track='#{$track}']  {
+    background-color: $value;
+    color: #fff7f7;
+  }
+  
+}
+
+p:nth-child(7) {
+
+  border-left: 2px solid var(--rank);
+  padding-left: 10px;
+  color: var(--rank);
+}
+
+
+svg {
+  font-family: Sans-Serif, Arial;
+}
+.line {
+stroke-width: 2;
+fill: none;
+}
+
+.axis path {
+stroke: black;
+}
+
+.text {
+font-size: 12px;
+}
+
+.title-text {
+font-size: 12px;
+}
+
+
+.graphCanvas{
+  min-height: 450px;
+}
+
+
+// .preload-graph {
+//   width: 100%;
+//   min-height: 400px;
+//   .spinner {
+//     width: 100%;
+//     height: 100%;
+//   }
+//   .graph {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     transition: visibility 0s linear, opacity 0s linear;
+//     opacity: 0;
+//     visibility: hidden;
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
+
+// .graph-loaded {
+//     .graph {
+//       transition: visibility .5s linear , opacity .5s linear;
+//       visibility: visible;
+//     }
+
+//     .spinner {
+//       display: none;
+//       visibility: hidden;
+//     }
+//   }
+

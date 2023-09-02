@@ -24,3 +24,220 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+path:hover {
+  //fill: var(--ion-color-medium-tint) !important;
+}
+
+.path {
+  stroke-width: 1.85;
+  stroke: var(--ion-color-medium-tint);
+}
+
+.map-label {
+  fill: var(--ion-color-light);
+  font-size: 1.15em;
+  font-weight: 500;
+  text-anchor: middle;
+  text-align: center;
+}
+
+.text {
+  font-size: 1em;
+  text-transform: capitalize;
+  
+}
+
+.text-numeric {
+  font-family: Lato-Bold;
+  font-size: 2em;
+  color: var(--ion-color-title);
+}
+
+.text-description {
+  font-size: 1.25em;
+  font-weight:550;
+  color: var(--ion-color-secondary);
+}
+
+.legend {
+  font-size: 1em;
+  text-anchor: start;
+  font-weight: 600;
+  align-items: center;
+}
+
+.graph-tick-text {
+  font-size: 1.2em;
+  text-anchor:middle;
+  align-items: center;
+  z-index: 5000;
+  padding-top: 1.5em;
+}
+
+
+.graph-value-text {
+  fill: var(--ion-color-light);
+  font-size: 1.25em;
+  text-anchor: middle;
+  align-items: center;
+}
+
+
+
+.text-portion {
+  position: absolute;
+  top: 0%;
+  left: 40%;
+  z-index: 50;
+  font-size: .75em;
+  padding: .5em;
+  text-align: center;
+  border-radius: 4px;
+  color: var(--ion-color-secondary);
+  opacity: .99;
+  pointer-events: none;
+
+}
+
+
+
+
+
+
+.tooltip {
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  z-index: 50;
+  visibility: hidden;
+  font-size: 1.2em;
+  padding: .5em;
+  background-color: #e3e0e0;
+  text-align: center;
+  border-radius: 4px;
+  color: var(--ion-color-light);
+  opacity: .99;
+  pointer-events: none;
+
+}
+
+
+
+
+
+.axisX line{
+  stroke: gray;
+   stroke-width: .5;
+}
+
+.axisX path{
+  stroke: rgba(173, 216, 230, 0.319);
+   stroke-width: .2;
+}
+
+.axisX text{
+  fill: rgb(50, 51, 58);
+}
+
+
+.axisY{
+  text-anchor: end;
+  text-overflow: ellipsis;
+  font-size: .75em;
+}
+
+.axisY line{
+stroke: gray;  stroke-width: .5;
+  
+}
+
+.axisY path{
+stroke: rgba(211, 211, 211, 0.406);  stroke-width: 1;
+}
+
+
+
+
+
+.division-modal {
+    align-items: center;
+    justify-content: center;
+    --min-height: 100%;
+    --min-width: 100%;
+    --max-height: 100%;
+    --max-width: 100%;
+
+  }
+
+/*
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+@media only screen and (max-width: 864px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+  ion-card {
+    margin-inline: 4px !important;
+  }
+
+  
+.text-numeric {
+  font-size: 1.5em;
+}
+
+.text-description {
+  font-size: 1.1em;
+}
+
+.legend {
+  font-size: .85em;
+}
+
+.graph-tick-text {
+  font-size: 1.25em;
+}
+
+.graph-value-text {
+  font-size: .85em;
+}
+
+.map-label {
+  font-size: 1em;
+}
+
+
+}
+
+.preload-graph {
+  width: 100%;
+  min-height: 400px;
+  .spinner {
+    width: 100%;
+    height: 100%;
+  }
+  .graph {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: visibility 0s linear, opacity 0s linear;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.graph-loaded {
+    .graph {
+      transition: visibility .5s linear , opacity .5s linear;
+      visibility: visible;
+    }
+
+    .spinner {
+      display: none;
+      visibility: hidden;
+    }
+  }
+

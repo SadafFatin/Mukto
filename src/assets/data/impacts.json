@@ -1,0 +1,251 @@
+{
+
+  "impacts": [
+
+    {
+      "goalProgress": {
+        "title": "Stunting",
+        "year": "2014",
+        "goal": 20,
+        "achieved": 28,
+        "targetDesc": "Target Goal 20% by 2021"
+
+      },
+      "prevalenceGraph": {
+
+        "title": "Prevalence of Stunting Under 5 years old",
+        "period": "2010-2014",
+        "graphValue": [
+
+          {
+            "year": "2010",
+            "value": 63.5
+          },
+          {
+            "year": "2011",
+            "value": 23.5
+          },
+          {
+            "year": "2012",
+            "value": 89.5
+          },
+          {
+            "year": "2013",
+            "value": 45.5
+          },
+          {
+            "year": "2014",
+            "value": 35.5
+          }
+        ]
+
+      },
+      "reference": {
+        "referenceTitle": "Reports on Stunting",
+        "reports": [{
+            "title": "BANGLADESH DEMOGRAPHIC AND HEALTH SURVEY 2011",
+            "link": "https://dhsprogram.com/pubs/pdf/fr265/fr265.pdf",
+            "period": "2013"
+          }
+
+        ]
+
+      }
+
+
+    },
+
+    {
+      "goalProgress": {
+        "title": "Wasting",
+        "year": "2014",
+        "goal": 35,
+        "achieved": 45,
+        "targetDesc": "Target Goal 35% by 2021"
+
+      },
+      "prevalenceGraph": {
+
+        "title": "Prevalence of Wasting Under 5 years old",
+        "period": "2010-2014",
+        "graphValue": [
+
+          {
+            "year": "2010",
+            "value": 63.5
+          },
+          {
+            "year": "2011",
+            "value": 23.5
+          },
+          {
+            "year": "2013",
+            "value": 89.5
+          },
+          {
+            "year": "2013",
+            "value": 45.5
+          },
+          {
+            "year": "2014",
+            "value": 35.5
+          }
+        ]
+
+      },
+
+      "reference": {
+        "referenceTitle": "Reports on Wasting",
+        "reports": [{
+            "title": "BANGLADESH DEMOGRAPHIC AND HEALTH SURVEY 2011",
+            "link": "https://dhsprogram.com/pubs/pdf/fr265/fr265.pdf",
+            "period": "2013"
+          }
+
+        ]
+
+      }
+
+
+    },
+    {
+      "goalProgress": {
+        "title": "Anemia",
+        "year": "2014",
+        "goal": 65,
+        "achieved": 45,
+        "targetDesc": "Target Goal 65% by 2021"
+
+      },
+      "prevalenceGraph": {
+
+        "title": "Prevalence of Anemia in Women <6 months old",
+        "period": "1997-2014",
+        "graphValue": [
+
+          {
+            "year": "1997",
+            "value": 23.5
+          },
+          {
+            "year": "1998",
+            "value": 23.5
+          },
+          {
+            "year": "1999",
+            "value": 23.5
+          },
+          {
+            "year": "2000",
+            "value": 35.5
+          },
+          {
+            "year": "2001",
+            "value": 44.5
+          },
+          {
+            "year": "2002",
+            "value": 64.5
+          },
+          {
+            "year": "2003",
+            "value": 56.5
+          }
+        ]
+
+      },
+
+      "reference": {
+        "referenceTitle": "Reports on Anemia",
+        "reports": [{
+            "title": "BANGLADESH DEMOGRAPHIC AND HEALTH SURVEY 2011",
+            "link": "https://dhsprogram.com/pubs/pdf/fr265/fr265.pdf",
+            "period": "2013"
+          },
+          {
+            "title": "BANGLADESH DEMOGRAPHIC AND HEALTH SURVEY 2011",
+            "link": "https://dhsprogram.com/pubs/pdf/fr265/fr265.pdf",
+            "period": "2017"
+          },
+          {
+            "title": "BANGLADESH DEMOGRAPHIC AND HEALTH SURVEY 2011",
+            "link": "https://dhsprogram.com/pubs/pdf/fr265/fr265.pdf",
+            "period": "2015"
+          }
+
+        ]
+
+      }
+    },
+    {
+
+      "goalProgress": {
+        "title": "Exclusive BreastFeeding",
+        "year": "2014",
+        "goal": 65,
+        "achieved": 45,
+        "targetDesc": "Target Goal 65% by 2021"
+
+      },
+      "prevalenceGraph": {
+
+        "title": "Prevalence of Exclusive Breastfeeding in children <6 months old",
+        "period": "1997-2014",
+        "graphValue": [
+
+          {
+            "year": "1997",
+            "value": 23.5
+          },
+          {
+            "year": "1998",
+            "value": 23.5
+          },
+          {
+            "year": "1999",
+            "value": 23.5
+          },
+          {
+            "year": "2000",
+            "value": 35.5
+          },
+          {
+            "year": "2001",
+            "value": 44.5
+          },
+          {
+            "year": "2002",
+            "value": 64.5
+          },
+          {
+            "year": "2003",
+            "value": 56.5
+          }
+        ]
+
+      },
+
+      "reference": {
+        "referenceTitle": "Reports on Exclusive Breast feeding",
+        "reports": [{
+            "title": "BANGLADESH DEMOGRAPHIC AND HEALTH SURVEY 2011",
+            "link": "https://dhsprogram.com/pubs/pdf/fr265/fr265.pdf",
+            "period": "2013"
+          },
+          {
+            "title": "BANGLADESH DEMOGRAPHIC AND HEALTH SURVEY 2011",
+            "link": "https://dhsprogram.com/pubs/pdf/fr265/fr265.pdf",
+            "period": "2017"
+          },
+          {
+            "title": "BANGLADESH DEMOGRAPHIC AND HEALTH SURVEY 2011",
+            "link": "https://dhsprogram.com/pubs/pdf/fr265/fr265.pdf",
+            "period": "2015"
+          }
+
+        ]
+
+      }
+    }
+  ]
+}

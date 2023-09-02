@@ -1,0 +1,28 @@
+<ng-container *ngIf="scoreCard; else elseTemplate">
+  <table>
+    <thead class="parent">
+      <th colspan="2">
+      </th>
+      <th colspan="6">Pnri Functional Data</th>
+      <th colspan="8">Pnri Service Data</th>
+    </thead>
+    <thead [ngClass]=" identifierColumn==='national'? 'national': 'header'">
+      <th colspan="1" *ngFor="let col of displayedColumns;let i =index">
+        {{ col.value }}
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let score of scoreCard| paginate : 
+                { itemsPerPage: itemsPerPage, currentPage: currentPage, totalItems: count }; let i = index">
+
+        <td *ngFor="let keyObj of displayedColumns" attr.data-sectionvalue="{{ keyObj.value }}: " [attr.track]="getCILabel(score[keyObj.key], keyObj.key, identifierColumn)" style="--rank: {{ getColorForPercentage(score.rank) }}">
+          {{ score[keyObj.key] | pnriDecorator: keyObj }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls class="paginator" previousLabel="Prev" nextLabel="Next" (pageChange)="onChange($event)"></pagination-controls>
+</ng-container>
+<ng-template #elseTemplate>
+  <app-skeleton></app-skeleton>
+</ng-template>

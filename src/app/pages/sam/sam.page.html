@@ -1,0 +1,143 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-button>
+        <ion-icon src="../../assets/icon/logo.svg" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Sam
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col sizeLg="6">
+        <ion-item>
+          <ion-label>Period Range:</ion-label>
+          <ion-datetime-button datetime="periodEnding" slot="end">
+          </ion-datetime-button>
+          <ion-datetime-button datetime="periodStarting" slot="end">
+          </ion-datetime-button>
+        </ion-item>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="periodStarting" (ionChange)="onStartingPeriodSelected($event)" presentation="month-year" cancelText="Cancel" [max]="periodEnding" [showDefaultButtons]="true" doneText="Set"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="periodEnding" (ionChange)="onEndingPeriodSelected($event)" presentation="month-year" cancelText="Cancel" [min]="periodStarting" [showDefaultButtons]="true" doneText="Set"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-icon name="map" slot="start">
+          </ion-icon>
+          <ion-label>
+            Division
+          </ion-label>
+          <ion-select mode="ios" interface="action-sheet" placeholder="Select Division" (ionChange)="onDivisionSelected($event)" #division>
+            <ion-select-option *ngFor="let division of divisionDropDown" [value]="division">
+              {{division.division_name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-icon name="location" slot="start">
+          </ion-icon>
+          <ion-label>
+            District
+          </ion-label>
+          <ion-select slot="end" interface="action-sheet" placeholder="Select District" (ionChange)="onDistrictSelected($event)" mode="ios" #district>
+            <ion-select-option *ngFor="let district of districtDropDown" [value]="district">
+              {{district.district_name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-icon name="pin" slot="start">
+          </ion-icon>
+          <ion-label>
+            Upazila
+          </ion-label>
+          <ion-select interface="action-sheet" placeholder="Select Upazila" (ionChange)="onUpazilaSelected($event)" mode="ios" #upazila>
+            <ion-select-option *ngFor="let upazila of upazilaDropDown" [value]="upazila">
+              {{upazila.upazila_name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card>
+    <ion-card-header color="success">
+      <ion-card-title>Sam Admitted </ion-card-title>
+    </ion-card-header>
+    <ion-row [ngClass]="isDataLoading  ? 'preload-graph' : 'graph-loaded'">
+      <ion-col size="12" class="graph">
+        <div #total_child_admittedLineChartCanvas id="total_child_admittedLineChartCanvas"></div>
+        <h4 class="ion-text-center">* The above chart shows number of admissions of all SAM patients
+        </h4>
+      </ion-col>
+      <ion-col size="12" class="graph">
+        <div #sam_cum_admittedBarChartCanvas id="sam_cum_admittedBarChartCanvas"></div>
+        <h4 class="ion-text-center">* The above chart shows a cumulative of all the SAM admissions
+        </h4>
+      </ion-col>
+      <app-skeleton class="spinner"></app-skeleton>
+    </ion-row>
+
+
+  </ion-card>
+
+  <!-- <ion-card mode="ios">
+    <ion-card-header color="success">
+      <ion-card-title>Sam Admitted Cumulative</ion-card-title>
+    </ion-card-header>
+    <div #sam_cum_admittedBarChartCanvas id="sam_cum_admittedBarChartCanvas"></div>
+  </ion-card> -->
+
+  <ion-card>
+    <ion-card-header color="success">
+      <ion-card-title>Sam Screened</ion-card-title>
+    </ion-card-header>
+    <ion-row [ngClass]="isDataLoading  ? 'preload-graph' : 'graph-loaded'">
+      <ion-col size="12" class="graph">
+        <div #total_child_screenedLineChartCanvas id="total_child_screenedLineChartCanvas"></div>
+        <h4 class="ion-text-center">* The above chart shows number of children screened for SAM</h4>
+      </ion-col>
+      <ion-col size="12" class="graph">
+        <div #sam_cum_screenedBarChartCanvas id="sam_cum_screenedBarChartCanvas"></div>
+        <h4 class="ion-text-center">* The above chart shows a cumulative of all the SAM admissions
+        </h4>
+      </ion-col>
+      <app-skeleton class="spinner"></app-skeleton>
+    </ion-row>
+  </ion-card>
+
+
+  <!-- <ion-card mode="ios">
+    <ion-card-header color="success">
+      <ion-card-title>Sam Screened Cumulative</ion-card-title>
+    </ion-card-header>
+    <div #sam_cum_screenedBarChartCanvas id="sam_cum_screenedBarChartCanvas"></div>
+  </ion-card> -->
+
+
+
+
+</ion-content>

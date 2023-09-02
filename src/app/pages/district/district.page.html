@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-button>
+        <ion-icon src="../../assets/icon/logo.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      District
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ng-container *ngIf="pnriData; else elseTemplate">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">
+              Pick
+              Starting Period
+            </ion-label>
+            <ion-icon slot="start" name="calendar">
+            </ion-icon>
+            <ion-input value="{{ periodStarting | date: 'MMM yyyy'  }}" id="districtDateStarting"
+              placeholder="Starting">
+            </ion-input>
+            <ion-popover trigger="districtDateStarting" size="calendar">
+              <ng-template>
+                <ion-datetime (ionChange)="onStartingPeriodSelected($event)" presentation="month-year"
+                  [max]="periodEnding" cancelText="Cancel" [showDefaultButtons]="true" doneText="Set">
+                </ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">
+              Pick
+              Ending Period
+            </ion-label>
+            <ion-icon slot="start" name="calendar">
+            </ion-icon>
+            <ion-input value="{{ periodEnding | date: 'MMM yyyy' }}" id="districtDateEnding" placeholder="Ending">
+            </ion-input>
+            <ion-popover trigger="districtDateEnding" size="calendar">
+              <ng-template>
+                <ion-datetime (ionChange)="onEndingPeriodSelected($event)" presentation="month-year"
+                  [min]="periodStarting" cancelText="Cancel" [showDefaultButtons]="true" doneText="Set">
+                </ion-datetime>
+              </ng-template>
+            </ion-popover>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-searchbar [formControl]="searchControl" (ionChange)="onSearchInput()"></ion-searchbar>
+    <div *ngIf="searching" class="ion-text-center">
+      <ion-spinner color="danger"></ion-spinner>
+    </div>
+
+    <ion-grid>
+      <app-pnri [pnriCIStandardColumn]="pnriData.reginalPerformanceBasedOnCIStandards" [scoreCard]="currentScoreCards">
+      </app-pnri>
+    </ion-grid>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <app-skeleton>
+    </app-skeleton>
+  </ng-template>
+
+
+
+
+</ion-content>

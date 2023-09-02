@@ -1,0 +1,135 @@
+{ 
+   "facilityReportingRates" : [
+
+
+      {
+      "title": "FWC",
+      "achieved": "40"
+    },
+    {
+      "title": "Community Clinic",
+
+      "achieved": 87
+    },
+    {
+      "title": "IMCI-Nutrition Corner",
+     
+      "achieved": 40
+    },
+    {
+      "title": "SAM",
+      "achieved": 34
+    }
+   ],
+
+   "impacts": [
+
+    {
+      "title":"Stunting",
+      "icon":"md-Children",
+      "description":"Reduce stunting in children under-5 years.",
+      "goal": 50,
+      "achieved": 40,
+      "targetDesc":"This demonstrates the progress of Horizontal Progress over the year."
+    },
+    {
+      "title":"Wasting",
+      "icon":"md-Children",
+      "description":"Reduce wasting in children under-5 years.",
+      "goal": 14,
+      "achieved": 18,
+      "targetDesc":"This demonstrates the progress of Horizontal Progress over the year."
+    },
+    {
+      "title":"Anemia",
+      "icon":"md-Water-source",
+      "description":"Prevalence of Anemia in Women of Reproductive Age",
+      "goal": 18,
+      "achieved": 25.9,
+      "targetDesc":"Target goal of 18% by 2026 Source: MICS"
+    },
+    {
+      "title":"Exclusive Breastfeeding",
+      "icon":"md-Nutrition",
+      "description":"Increase Prevalence of Exclusive Breastfeeding",
+      "goal": 64,
+      "achieved": 72.5,
+      "targetDesc":"Target goal of 72% by 2026 Source: MICS"
+    },
+    {
+      "title":"Vitamin A Supplements",
+      "icon":"md-Medicine",
+      "description":"Two Dosage Coverage for 2026-99%",
+      "goal": 98,
+      "achieved": 99,
+      "targetDesc":"Target goal of 99% by 2026 Source: MICS"
+    },
+    {
+      "title":"Women Underweight",
+      "icon":"md-Person-1",
+      "description":"Prevalence of Women of Reproductive Age with BMI < 18.5",
+      "goal": 98,
+      "achieved": 99,
+      "targetDesc":"Target goal of 20.5% by 2026 Source: MICS"
+    }
+  ],
+  "inputs": [
+    {
+      "title": "ENHANCED CAPACITY OF PLANNERS AND SERVICE PROVIDERS",
+      "inputs": [
+        {
+          "stat": "62%",
+          "description": "(38,000) health workers trained on CCTN/CBT"
+        },
+        {
+          "stat": "55%",
+          "description": "health workers passed the training uptake assessment"
+        }
+      ]
+    },
+    {
+      "title": "ENSURE ADEQUATE NUTRITION SUPPLIES",
+      "inputs": [
+        {
+          "stat": "62%",
+          "description": "% of SAM Units with F75 Milk"
+        },
+        {
+          "stat": "52%",
+          "description": "% of Community Clinics with adequate anthropometric measuring tools"
+        },
+        {
+          "stat": "35%",
+          "description": "% of Community Clinics without inadequate IFA stocks"
+        }
+      ]
+    },
+    {
+      "title": "QUALITY CONTROL AND SUPPORTIVE SUPERVISION",
+      "inputs": [
+        {
+          "stat": "6%",
+          "description": "% of facilities passing the Data Quality Assessment"
+        },
+        {
+          "stat": "70%",
+          "description": "% of facilities receiving supporting supervision and monitoring in the last quarter"
+        }
+      ]
+    }
+
+  ],
+  "childNutrition": [
+      { "key": "Caretakers of 6-23 month olds counselled on IYCF", "value": 23 },
+      { "key": "Children 6-23 months old weighed at facilities", "value": 34 },
+      { "key": "Children 6-23 months screened for SAM", "value": 55 }
+    ],
+    "maternalNutrition":  [
+      { "key": "Pregnant Woman Counselled on maternal nutrition", "value": 92 },
+      { "key": "Woman who received IFA", "value": 110 },
+      { "key": "Pregnant Woman weighted on facility", "value": 10 }
+    ]
+
+
+
+}

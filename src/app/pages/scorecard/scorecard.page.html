@@ -1,0 +1,249 @@
+<!-- <ion-tabs>
+
+  <ion-tab-bar slot="bottom" color="light">
+    <ion-tab-button tab="national">
+      <ion-icon name="golf"></ion-icon>
+      <ion-label>National</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="division">
+      <ion-icon name="map"></ion-icon>
+      <ion-label>Division</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="district">
+      <ion-icon name="location"></ion-icon>
+      <ion-label>District</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="upazila">
+      <ion-icon name="pin"></ion-icon>
+      <ion-label>Upazila</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs> -->
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-button>
+        <ion-icon src="../../assets/icon/logo.svg" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Scorecard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-chip *ngFor="let box of standardPerformanceBasedOnCIColumn" mode="ios" [attr.track]="box.key">
+          <b>{{box.value}}</b>
+        </ion-chip>
+      </ion-col>
+      <ion-col>
+        <ion-segment color="success" swipeGesture=" true" [(ngModel)]="segment" (ionChange)="onSegmentChanged($event)" mode="ios">
+          <ion-segment-button [value]="'national_scorecards'">
+            <!-- <ion-icon size="small" name="golf">
+            </ion-icon> -->
+            <ion-label>
+              National
+            </ion-label>
+          </ion-segment-button>
+          <ion-segment-button [value]="'division_scorecards'">
+            <!-- <ion-icon size="small" name="map">
+            </ion-icon> -->
+            <ion-label>
+              Divisions
+            </ion-label>
+          </ion-segment-button>
+          <ion-segment-button [value]="'district_scorecards'">
+            <!-- <ion-icon size="small" name="location">
+            </ion-icon> -->
+            <ion-label>
+              Districts
+            </ion-label>
+          </ion-segment-button>
+          <ion-segment-button [value]="'upazila_scorecards'">
+            <!-- <ion-icon size="small" name="pin">
+            </ion-icon> -->
+            <ion-label>
+              Upazilas
+            </ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col sizeLg="6">
+        <ion-item>
+          <ion-label>Period Range:</ion-label>
+          <ion-datetime-button datetime="periodEnding" slot="end">
+          </ion-datetime-button>
+          <ion-datetime-button datetime="periodStarting" slot="end">
+          </ion-datetime-button>
+        </ion-item>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="periodStarting" (ionChange)="onStartingPeriodSelected($event)" presentation="month-year" cancelText="Cancel" [max]="periodEnding" [showDefaultButtons]="true" doneText="Set"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="periodEnding" (ionChange)="onEndingPeriodSelected($event)" presentation="month-year" cancelText="Cancel" [min]="periodStarting" [showDefaultButtons]="true" doneText="Set"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-icon name="map" slot="start">
+          </ion-icon>
+          <ion-label>
+            Division
+          </ion-label>
+          <ion-select mode="ios" interface="action-sheet" placeholder="Select Division" (ionChange)="onDivisionSelected($event)" #division>
+            <ion-select-option *ngFor="let division of divisionDropDown" [value]="division">
+              {{division.division_name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-icon name="location" slot="start">
+          </ion-icon>
+          <ion-label>
+            District
+          </ion-label>
+          <ion-select slot="end" interface="action-sheet" placeholder="Select District" (ionChange)="onDistrictSelected($event)" mode="ios" #district>
+            <ion-select-option *ngFor="let district of districtDropDown" [value]="district">
+              {{district.district_name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-icon name="pin" slot="start">
+          </ion-icon>
+          <ion-label>
+            Upazila
+          </ion-label>
+          <ion-select interface="action-sheet" placeholder="Select Upazila" (ionChange)="onUpazilaSelected($event)" mode="ios" #upazila>
+            <ion-select-option *ngFor="let upazila of upazilaDropDown" [value]="upazila">
+              {{upazila.upazila_name}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-segment color="danger" [(ngModel)]="viewType" swipeGesture="true" (ionChange)="onViewModeSegmentChanged($event)">
+        <ion-segment-button value="table" layout="icon-start">
+          <ion-icon size="small" name="grid">
+          </ion-icon>
+          <ion-label>
+            Table
+          </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="graph" layout="icon-start">
+          <ion-icon size="small" name="bar-chart">
+          </ion-icon>
+          <ion-label>
+            Graph
+          </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="division-graph" layout="icon-start">
+          <ion-icon size="small" name="bar-chart">
+          </ion-icon>
+          <ion-label>
+            Division Graph
+          </ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-row>
+  </ion-grid>
+
+
+  <div [ngSwitch]="viewType">
+    <ion-grid *ngSwitchCase="'table'">
+      <ion-grid>
+        <app-pnri [scoreCard]="currentScorecards" [identifierColumn]="identifierColumn"></app-pnri>
+      </ion-grid>
+      <ion-grid *ngIf="ccData.length>0">
+        <app-community-clinic [scoreCard]="ccData"></app-community-clinic>
+      </ion-grid>
+    </ion-grid>
+    <ion-grid *ngSwitchCase="'graph'">
+      <ion-card>
+        <ion-card-header color="danger">
+          <ion-card-title class="ion-text-center">
+            {{scorecardData.pnriServiceLineCharts[0].value}}
+          </ion-card-title>
+        </ion-card-header>
+        <div #compositeIndexGraphCanvas class="ion-padding-top" id="compositeIndexGraphCanvas" class="graphCanvas">
+        </div>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="medium">
+          <ion-card-title class="ion-text-center">
+            PNRI
+            Nation
+            Service
+            Data
+            TimeLine
+          </ion-card-title>
+        </ion-card-header>
+        <div #serviceDataGraphCanvas id="serviceDataGraphCanvas">
+        </div>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="medium">
+          <ion-card-title class="ion-text-center">
+            Overall Performance of districts based on CI
+          </ion-card-title>
+        </ion-card-header>
+        <div #performanceNationalBasedOnCICanvas id="performanceNationalBasedOnCICanvas">
+        </div>
+      </ion-card>
+    </ion-grid>
+    <ion-grid *ngSwitchCase="'division-graph'">
+      <ion-card class="graphCanvas">
+        <ion-card-header color="danger">
+          <ion-card-title class="ion-text-center">
+            Division
+            Performance
+            Graph
+          </ion-card-title>
+        </ion-card-header>
+        <div #divisionRankingGraphCanvas class="ion-padding-top" id="divisionRankingGraphCanvas">
+        </div>
+      </ion-card>
+      <ion-card>
+        <ion-card-header color="success">
+          <ion-card-title class="ion-text-center">
+            {{scorecardData.divisionStatusPieCartColumn.value}}
+          </ion-card-title>
+        </ion-card-header>
+        <div #divisionSAMAdmittedGraphCanvas id="divisionSAMAdmittedGraphCanvas">
+        </div>
+      </ion-card>
+    </ion-grid>
+  </div>
+
+
+
+
+
+
+
+
+
+</ion-content>

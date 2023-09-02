@@ -1,0 +1,140 @@
+ion-card {
+  margin: .05em;
+}
+
+/*
+	Generic Styling, for Desktops/Laptops
+	*/
+table {
+  max-width: 100%;
+   border-collapse: collapse;
+   table-layout: auto;
+  font-family:   Helvetica, Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+
+/*Header*/
+thead th{
+  padding: .75em .095em .75em .095em;
+  color: var(--ion-color-medium-shade);
+  border: .075em solid var(--ion-color-medium-tint);
+  text-align: center;
+}
+/* parent header */
+.parent th{
+  background-color: #cfd9f7;
+}
+.header { background-color: #e9f7e3;}
+
+
+
+/** Table Data */
+td{
+  padding: .75em .095em .75em .095em;
+  color:  var(--ion-color-medium-shade);
+  border: .075em solid var(--ion-color-medium-tint);
+  text-align: center;
+
+}
+
+$categories: (
+  ionic: var(--ion-color-primary),
+  very_poor: var(--ion-color-danger),
+  moderate_poor: var(--ion-color-warning-shade),
+  poor: var(--ion-color-danger-tint),
+  avg: var(--ion-color-warning-tint),
+  good: var(--ion-color-success-tint),
+  over_estimate: var(--ion-color-tertiary-tint),
+);
+
+@each $track, $value in map-remove($categories) {
+   td[track='#{$track}']  {
+    background-color: $value;
+  }
+  ion-label[track='#{$track}']  {
+    //background-color: $value;
+    //color: $value;
+     border-left: 1em solid $value;
+     padding-left: 10px;
+  }
+ 
+}
+
+
+/*
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+@media only screen and (max-width: 864px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    text-align: start;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead th {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  tbody tr{
+    border-bottom: .45em solid var(--ion-color-danger);
+    margin: 0.75em;
+    background-color: #ecf3fa;
+  }
+
+  td {
+    padding: .75rem;
+  }
+
+  td:nth-of-type(n):before {
+    content: attr(data-sectionvalue);
+  }
+
+  td:nth-of-type(1) {
+    font-size: 1.75em;
+  }
+  td:nth-of-type(7) {
+    font-size: 1.75em;
+  }
+
+
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  body {
+    width: 100%;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  body {
+    width: 100%;
+  }
+}
+
+ li span {
+  float: left;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 5px;
+  margin-left: 0;
+  border: 1px solid #999;
+
+  }
+
+
+

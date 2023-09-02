@@ -1,0 +1,266 @@
+ion-card {
+  margin: .05em;
+}
+
+/*
+	Generic Styling, for Desktops/Laptops
+	*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  font-family:   Helvetica, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/*Header*/
+thead th{
+  padding: .75em .095em .75em .095em;
+  color: var(--ion-color-light);
+  border: .075em solid var(--ion-color-medium-tint);
+  text-align: center;
+  font-size: small;
+}
+
+
+/* national header */
+.national-header th:nth-child(n+1):nth-child(-n+1){
+  background-color: #E2EFDA;
+  color: #3c3e40;
+}
+.national-header th:nth-child(n+2) {
+  background: var(--ion-color-success);
+}
+/* pnri functional header */
+.national-header th:nth-child(n+3):nth-child(-n+9) {
+  //background: var(--ion-color-tertiary);
+   background: #4169e1;
+}
+/* pnri service header */
+.national-header th:nth-child(n+9) {
+  background: var(--ion-color-success);
+}
+
+
+/* division header */
+.division-header th:nth-child(n+1):nth-child(-n+2){
+  background-color: #E2EFDA;
+  color: #3c3e40;
+}
+.division-header th:nth-child(n+3) {
+  background: var(--ion-color-success);
+}
+/* pnri functional header */
+.division-header th:nth-child(n+4):nth-child(-n+10) {
+  //background: var(--ion-color-tertiary);
+   background: #4169e1;
+}
+.division-header th:nth-child(n+11) {
+  background: var(--ion-color-warning-shade);
+}
+/* pnri service header */
+.division-header th:nth-child(n+12) {
+  background: var(--ion-color-success);
+}
+
+
+/* district header */
+.district-header th:nth-child(n+1):nth-child(-n+3){
+  background-color: #E2EFDA;
+  color: #3c3e40;
+}
+.district-header th:nth-child(n+4) {
+  background: var(--ion-color-success);
+}
+/* pnri functional header */
+.district-header th:nth-child(n+5):nth-child(-n+11) {
+  //background: var(--ion-color-tertiary);
+   background: #4169e1;
+}
+.district-header th:nth-child(n+12):nth-child(-n+12) {
+  background: var(--ion-color-warning-shade);
+}
+/* pnri service header */
+.district-header th:nth-child(n+13) {
+  background: var(--ion-color-success);
+}
+
+
+/* district header */
+.upazila-header th:nth-child(n+1):nth-child(-n+3){
+  background-color: #E2EFDA;
+  color: #3c3e40;
+}
+.upazila-header th:nth-child(n+4) {
+  background: var(--ion-color-success);
+}
+/* pnri functional header */
+.upazila-header th:nth-child(n+5):nth-child(-n+11) {
+  //background: var(--ion-color-tertiary);
+   background: #4169e1;
+}
+.upazila-header th:nth-child(n+12):nth-child(-n+12) {
+  background: var(--ion-color-warning-shade);
+}
+/* pnri service header */
+.upazila-header th:nth-child(n+13) {
+  background: var(--ion-color-success);
+}
+
+
+
+
+
+
+
+
+
+// .header th:nth-child(n+0):nth-child(-n+2){
+//   background-color: #E2EFDA;
+//   color: #3c3e40;
+// }
+// /* pnri functional header */
+// .header th:nth-child(n+4):nth-child(-n+10) {
+//   background: #4169e1;
+// }
+// /* pnri service header */
+// .header th:nth-child(n+3) {
+//   background: var(--ion-color-success);
+// }
+// .header th:nth-child(n+11) {
+//   background: var(--ion-color-warning-shade);
+// }
+// .header th:nth-child(n+12) {
+//   background: var(--ion-color-success);
+// }
+
+
+
+
+
+
+
+
+
+
+/** Table Data */
+td:nth-child(n+1){
+  padding: .75em .095em .75em .095em;
+  color:  var(--ion-color-medium-shade);
+  border: .075em solid var(--ion-color-medium-tint);
+  text-align: center;
+  background-color:#ecf3fa;
+}
+
+
+
+$categories: (
+  ionic: var(--ion-color-primary),
+  very_poor: var(--ion-color-danger),
+  moderate_poor: var(--ion-color-warning-shade),
+  poor: var(--ion-color-danger-tint),
+  avg: var(--ion-color-warning-tint),
+  good: var(--ion-color-success-tint),
+  over_estimate: var(--ion-color-tertiary-tint),
+);
+
+// @each $track, $value in map-remove($categories) {
+//    td:nth-child(n+3):nth-child(-n+8)[track='#{$track}']  {
+//     background-color: $value;
+//   }
+//   td:nth-child(n+11):nth-child(-n+12) {
+//     background-color: #E2EFDA;
+//   }
+//   td:nth-child(n+13){
+//     background-color: #DDEBF7;
+//   }
+//   td:nth-child(n+14)[track='#{$track}']  {
+//     background-color: $value;
+//   }
+//   ion-label[track='#{$track}']  {
+//     //background-color: $value;
+//     //color: $value;
+//      border-left: 1em solid $value;
+//      padding-left: 10px;
+//     //--background: rgb(214, 6, 6);
+//   }
+ 
+// }
+.division-header td:nth-child(11){
+  background-color: var(--rank);
+}
+
+.district-header td:nth-child(12){
+  background-color: var(--rank);
+}
+
+.upazila-header td:nth-child(12){
+  background-color: var(--rank);
+}
+
+
+/*
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+@media only screen and (max-width: 864px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    text-align: start;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead th {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  tbody tr{
+    border-bottom: .45em solid var(--ion-color-danger);
+    margin: 0.75em;
+    background-color: #ecf3fa;
+  }
+
+  td {
+    padding: .75rem;
+  }
+
+  td:nth-of-type(n):before {
+    content: attr(data-sectionvalue);
+  }
+
+  td:nth-of-type(1) {
+    font-size: 1.75em;
+  }
+  td:nth-of-type(7) {
+    font-size: 1.75em;
+  }
+
+
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  body {
+    width: 100%;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  body {
+    width: 100%;
+  }
+}
+
+

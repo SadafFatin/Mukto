@@ -1,0 +1,125 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+      <ion-button>
+        <ion-icon src="../../assets/icon/logo.svg">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      National
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ng-container *ngIf="pnriData; else elseTemplate">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              Pick
+              Starting Period
+            </ion-label>
+            <ion-icon slot="start" name="calendar">
+            </ion-icon>
+            <ion-datetime-button datetime="periodStarting">
+            </ion-datetime-button>
+          </ion-item>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime id="periodStarting" (ionChange)="onStartingPeriodSelected($event)" presentation="month-year" cancelText="Cancel" [max]="periodEnding" [showDefaultButtons]="true" doneText="Set"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>
+              Pick
+              Ending Period
+            </ion-label>
+            <ion-icon slot="start" name="calendar">
+            </ion-icon>
+            <ion-datetime-button datetime="periodEnding">
+            </ion-datetime-button>
+          </ion-item>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime id="periodEnding" (ionChange)="onEndingPeriodSelected($event)" presentation="month-year" cancelText="Cancel" [min]="periodStarting" [showDefaultButtons]="true" doneText="Set"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-segment color="danger" [(ngModel)]="viewType" swipeGesture="true" (ionChange)="onSegmentChanged($event)">
+      <ion-segment-button value="table" layout="icon-start">
+        <ion-icon size="small" name="grid">
+        </ion-icon>
+        <ion-label>
+          Table
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="graph" layout="icon-start">
+        <ion-icon size="small" name="bar-chart">
+        </ion-icon>
+        <ion-label>
+          Graph
+        </ion-label>
+      </ion-segment-button>
+
+
+    </ion-segment>
+
+    <div [ngSwitch]="viewType">
+      <ion-grid *ngSwitchCase="'table'">
+        <app-pnri [pnriCIStandardColumn]="pnriData.nationalPerformanceBasedOnCIStandards" [scoreCard]="pnriData.national_scorecards">
+        </app-pnri>
+      </ion-grid>
+      <ion-grid *ngSwitchCase="'graph'">
+        <ion-card>
+          <ion-card-header color="danger">
+            <ion-card-title class="ion-text-center">
+              {{pnriData.pnriServiceLineCharts[0].value}}
+            </ion-card-title>
+          </ion-card-header>
+          <div #compositeIndexGraphCanvas class="ion-padding-top" id="compositeIndexGraphCanvas" class="graphCanvas">
+          </div>
+        </ion-card>
+        <ion-card>
+          <ion-card-header color="medium">
+            <ion-card-title class="ion-text-center">
+              PNRI
+              Nation
+              Service
+              Data
+              TimeLine
+            </ion-card-title>
+          </ion-card-header>
+          <div #serviceDataGraphCanvas id="serviceDataGraphCanvas" class="graphCanvas">
+          </div>
+        </ion-card>
+        <ion-card>
+          <ion-card-header color="medium">
+            <ion-card-title class="ion-text-center">
+              Overall Performance of districts based on CI
+            </ion-card-title>
+          </ion-card-header>
+          <div #performanceNationalBasedOnCICanvas id="performanceNationalBasedOnCICanvas" class="graphCanvas">
+          </div>
+        </ion-card>
+      </ion-grid>
+    </div>
+
+
+  </ng-container>
+  <ng-template #elseTemplate>
+    <app-skeleton>
+    </app-skeleton>
+  </ng-template>
+
+</ion-content>

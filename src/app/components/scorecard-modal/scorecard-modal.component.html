@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon src="../../assets/icon/logo.svg" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Pnri Table
+    </ion-title>
+    <ion-buttons slot="end">
+
+      <ion-button (click)="dismiss()" strong>
+        <ion-icon slot="icon-only" name="close">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content><ion-grid>
+    <app-pnri [scoreCard]="feature" [identifierColumn]="identifierColumn"></app-pnri>
+  </ion-grid></ion-content>

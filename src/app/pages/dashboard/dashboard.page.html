@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-button>
+        <ion-icon src="../../assets/icon/logo.svg" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Dashboard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid *ngIf="dashboardData;else loading">
+    <ion-row>
+      <ion-col sizeLg="8" size="12" [ngClass]="isDataLoading  ? 'preload-graph' : 'graph-loaded'">
+        <ion-card-header color="success" #body>
+          <ion-card-title>National Outputs</ion-card-title>
+        </ion-card-header>
+        <ion-row class="graph">
+          <ion-col sizeLg="6" size="12">
+            <div id="maternalNutrition" #maternalNutrition style="display: block"></div>
+          </ion-col>
+          <ion-col sizeLg="6" size="12">
+            <div id="childNutrition" #childNutrition></div>
+          </ion-col>
+        </ion-row>
+        <app-skeleton class="spinner"></app-skeleton>
+        <ion-card-header color="success">
+          <ion-card-title>Impacts</ion-card-title>
+        </ion-card-header>
+        <ion-grid [fixed]="true">
+          <ion-row>
+            <ion-col>
+              <span *ngFor="let item of dashboardData.impacts;">
+                <app-horizontal-goal-progress [goalProgress]="item"></app-horizontal-goal-progress>
+              </span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      <ion-col sizeLg="4" size="12">
+        <ion-card-header color="success">
+          <ion-card-title>Inputs</ion-card-title>
+        </ion-card-header>
+        <span *ngFor="let item of dashboardData.facilityReportingRates;">
+          <app-horizontal-goal-progress [goalProgress]="item"></app-horizontal-goal-progress>
+        </span>
+
+        <div *ngFor="let item of dashboardData.inputs;">
+          <ion-card-header>
+            <ion-card-title color="medium">{{item.title}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row *ngFor="let stat of item.inputs;">
+              <ion-col size="2.5">
+                <span class="text-numeric">{{stat.stat}}</span></ion-col>
+              <ion-col>
+                <span class="text-description">{{stat.description}}</span>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ng-template #loading>
+    <app-skeleton></app-skeleton>
+  </ng-template>
+
+</ion-content>

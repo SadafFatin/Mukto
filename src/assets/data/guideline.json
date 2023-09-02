@@ -1,0 +1,66 @@
+{"title": "To have a complete idea about how to use a district nutrition profile and scorecard we are taking \u2018Barishal\u2019 district as example.",
+
+"demographyAdministrativeSetup": {
+
+
+    "title": "Demography And Administrative Setup",
+    "desc" : "The 1st page shows demographic and administrative setup of Barishal district in first section. Total population of Barishal district is 2,748,090 of which 1,375,418 are male and 1,322,672 are female. 2,103,490 (almost 72%) of the total residents of the district reside in rural area and 644,598 (around 22%) in urban area. About 57,379 women are pregnant and 81,940 are lactating. Children aged 0 to 5 months constitutes number of 17,732 and children 6 to 23 months are 64,209. Child 6 to 59 months are 216,666. Adolescent comprises of 21% of the total population \twhich \tis \t539,745. The district covers 2,785 square kilometer of \tland \tarea \twhich \tis \tdivided \tin 10 upazilas and 86 numbers of unions. Five municipalities are also there along with upazilas. There are about 248,532 households in this district. For providing health care services to the community there are about 267 community clinic, 9 upazila health complex, 51 family welfare center in the district. Based on the composite index of priority nutrition results indicators of National Nutrition Services, Barishal district  is ranking on 7th position and based on the stunting status Barishal district  is ranking on 56th position among all 64 districts. Second section shows nutritional status of children & women specially. The graph shows that 36% of children under age 5 are stunted which is much behind than the NPAN2 Target of reduction to 25%. Rate of wasting is 11% and underweight is 26% both of which are still behind the reduction target of NPAN2 which are 8% and 15%. Along with we can also see comparison with \tnational \tand \tdivisional \tperformance. The next section shows some key nutrition indicators. Initiation of breastfeeding within 1 hour of birth is 39%. About 63% of women receiving at least one ANC during pregnancy and 34% are completing all the 4 visits required by a health care professional. Vitamin A supplementation coverage in district is 98%. About 73% of household are consuming iodized salt.",
+    "image": "https://ars.els-cdn.com/content/image/1-s2.0-S2211912416301018-gr2.jpg"
+},
+
+
+
+"otherNutritionInterventionIndicator": {
+  "title": "Other Nutrition Intervention Indicator",
+
+  "desc": "Prevalence of childhood overweight and obesity is 3% which is also a point to be noticed and indicates improper nutritional status of the community. District level data of minimum acceptable diet, prevalence of adult obesity, BMI of adolescents girls, prevalence of maternal anemia is not available.",
+"image" : ""},
+
+"nationalNutritionServiceIndicators": {
+  "title": "National NutritionService Indicators",
+
+  "desc" : "The next section shows geographical distribution of upazila wise performance based on composite index. Upazila having the `score <0.50` is categorized as poor, `between 0.5 to 0.74 as average` and `>:0.75 as good`.","image":"https://ars.els-cdn.com/content/image/1-s2.0-S2211912416301018-gr2.jpg"},
+
+
+"trendsOfKeyPerformanceIndicator": {
+  "title": "Trends Of Key Performance Indicator",
+
+  "desc" : "The next graph express trend of key performance indicator of nutrition for the year of 2019 and 2020. The indicators are: 1. Percentages of children screened for SAM at facility. 2. Percentages of pregnant women weighted during Clinic Visit 3. Percentages of facilities providing IYCF counseling to caregivers. 4. Percentages of facilities reporting on complete nutrition indicator","image":""},
+
+"upazilaWisePerformanceBasedOnCompositeIndex": {
+  "title": "Upazila Wise Performance Based On CompositeIndex",
+
+    "desc" : "The composite index is the value that is calculated based on above mentioned indicators. Upazila wise performances for the mentioned indicators are considered to compute the composite index for the specific years.","image":""
+},
+
+"foodSecurityAndLivelihoodIndicators": {
+  "title": "FoodSecurity And Livelihood Indicators",
+
+    "desc" : "TIn Barishal district, quantity of salt intake by per person by per day is 6gm and for sugar it is also 6gm. Consumption of total dietary energy from cereals is 70% and quantity of fruits and vegetables intake by per person by per day is 192gm/day.","image":""
+},
+"health": {
+  "title": "Health",
+
+    "desc" : "The next graph is showing health status of the district by immunization coverage of Measles and Rubella 1st dose, early initiation of breastfeeding at facility, status of diarrhea \treported \tin \tlast \ttwo week and status of diarrhea reported in last two week and treated with Zinc and Ors. Here MR1 crude coverage is 94% that is one of the components of EPI coverage. 83% of mother in facility birth is assisted to initiate breastfeeding within one hour of birth. At the same time we can see comparison with national and divisional performance. District level data for remaining two indicators is not available.","image":""
+}
+,
+"waterSanitationAndHygiene": {
+  "title": "Water Sanitation And Hygiene",
+
+    "desc" : "Next graph is representing status of water sanitation and hygiene with four common indicator status those are access to improved drinking water, access to improved sanitation, safe disposal of child feces and household with hand washing stationaries. Almost 100% of population having access to improve drinking water and 70% to improved sanitation. 95% of population dispose their child feces safely and only 49% of total population having access to hand washing accessories in their household. At the same time we can see comparison with national and divisional performances as well.","image":""
+}
+,
+ "education": {
+  "title": "Education",
+
+    "desc": "Some important education parameters are presented in next picture. Overall district education status are being expressed with early childhood development Index 73%, attendance to early childhood education is 32%, primary completion rate 70% as well. Literacy rate of women age 15 to 24 years are 95% in Barishal district.",
+    "image": ""
+ },
+"socialProtectionIndicator": {
+  "title": "Social Protection Indicator",
+
+"desc":  "The last table represents some indicator of social protection to understand the status of district at a glance. Birth registration is one of the main indicators and only 73 of 100 under 5 children of Barishal are having their birth registration in government registry. Rate of 20 to 49 years old married women getting married before 18 years of age are 49% and rate of 20 to 24 years old women who have begun childbearing is 24%. 27,914 are having access to vulnerable group development (VGD) program. Barishal district data for receiving maternity allowance is not available",
+"image": ""
+}
+}
+

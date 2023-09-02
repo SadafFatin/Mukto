@@ -1,0 +1,28 @@
+<table>
+
+  <thead class="parent">
+    <th colspan="13">
+      Community Clinic Data
+    </th>
+  </thead>
+  <thead class="header">
+    <tr>
+      <th colspan="1" *ngFor="let col of displayedColumns;let i =index">
+        {{ col.value }}
+      </th>
+    </tr>
+  </thead>
+
+  <tbody *ngFor="let cc of scoreCard | paginate : 
+                  { itemsPerPage: itemsPerPage, currentPage: currentPage, totalItems: count }; let i = index">
+
+
+    <tr *ngFor="let score of cc.values">
+      <td *ngFor="let keyObj of displayedColumns" attr.data-sectionvalue="{{ keyObj.value }}: " [attr.track]="getCILabel(score[keyObj.key], keyObj.key,'cc')">
+        {{ score[keyObj.key] | pnriDecorator: keyObj }}
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>
